@@ -7,7 +7,6 @@ root.render(
     <>
         <h1>Welcome to ReactOPENAI</h1>
         <Formulario/>
-        <ConnectAPI />
         <hr />
         
     </>
@@ -26,15 +25,23 @@ function Formulario() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <textarea 
-            onChange={handleInput} 
-            name="prompt" 
-            placeholder="Write a prompt" />
-            
-            <br />
+        <>
+            <form onSubmit={handleSubmit}>
+                <textarea 
+                onChange={handleInput} 
+                name="prompt" 
+                placeholder="Write a prompt" />
+                
+                <br />
 
-            <button type="submit">Enviar</button>
-        </form>
+                <button type="submit">Enviar</button>
+
+            </form>
+            
+            {messagePrompt&&
+                <ConnectAPI message= {messagePrompt} />
+            }
+            
+        </>
     )
 }
