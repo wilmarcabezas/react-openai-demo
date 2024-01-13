@@ -6,7 +6,7 @@ function ConnectAPI(props) {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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"
+            "Authorization": "Bearer "
         },
         body: JSON.stringify({
             "model": "gpt-3.5-turbo",
